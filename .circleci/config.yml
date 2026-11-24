@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  show_release:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run:
+          name: print os release
+          command: cat /etc/os-release
+workflows:
+  main:
+    jobs:
+      - show_release
